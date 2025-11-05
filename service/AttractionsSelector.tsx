@@ -1,26 +1,16 @@
-export const AttractionsSelector=[
-    {
-        id:1,
-        image:require('../assets/images/Cascades DOuzoud.jpg'),
-        title:"Cascades D'Ouzoud ",
-        description:"Morocco's most spectacular waterfalls",
-    },
-    {
-        id:2,
-        image:require('../assets/images/Bin El Ouidane Lake.jpg'),
-        title:"Bin El Ouidane Lake",
-        description:'A serene reservoir in the Atlas Mountains',
-    },
-    {
-        id:3,
-        image:require('../assets/images/Cascades DOuzoud.jpg'),
-        title:"Kasbah Ras El Ain",
-        description:'Historic fortress overlooking the city',
-    },
-    {
-        id:4,
-        image:require('../assets/images/Kasbah Ras El Ain1.jpg'),
-        title:"Beni Mellal Souk",
-        description:'Experience the vibrant traditional market',
-    }
-]
+import axios from 'axios';
+
+const api = axios.create({
+  baseURL: "https://69086a582d902d0651b03223.mockapi.io/api/v1",
+  timeout: 5000
+});
+
+export const getProdacte = async () => {
+  try {
+    const response = await api.get('/places');
+    return response.data;
+  } catch (error) {
+    console.error("Error fetching products:", error);
+    throw error;
+  }
+};
