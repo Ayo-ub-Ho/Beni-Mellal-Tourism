@@ -1,7 +1,7 @@
 export const AttractionsSelector=[
     {
         id:1,
-        image:require('../assets/images/BeniMelal.jpg'),
+        image:require('../assets/images/Cascades DOuzoud.jpg'),
         title:"Cascades D'Ouzoud ",
         description:"Morocco's most spectacular waterfalls",
     },
@@ -19,7 +19,7 @@ export const AttractionsSelector=[
     },
     {
         id:4,
-        image:require('../assets/images/Beni Mellal Souk.jpg'),
+        image:require('../assets/images/Kasbah Ras El Ain1.jpg'),
         title:"Beni Mellal Souk",
         description:'Experience the vibrant traditional market',
     }
