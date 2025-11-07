@@ -5,6 +5,7 @@ const api = axios.create({
   timeout: 5000
 });
 
+
 export const getProdacte = async () => {
   try {
     const response = await api.get('/places');

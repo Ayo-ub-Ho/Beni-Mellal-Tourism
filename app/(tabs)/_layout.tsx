@@ -5,7 +5,7 @@ export default function Layout(){
     return(
         <Tabs screenOptions={{ headerShown: false }} tabBar={(props) => <TabBar {...props} />}>
             <Tabs.Screen name="Home"/>
-            <Tabs.Screen name="ListOfAttractions"/>
+            <Tabs.Screen name="ListOfAttractions" />
         </Tabs>
     )
 }
