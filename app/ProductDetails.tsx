@@ -13,7 +13,7 @@ export default function ProductDetails() {
     <SafeAreaView>
       <View style={styles.container}>
       {thumbnailUri && <Image source={{ uri: thumbnailUri }} style={styles.image} />}
-      <View style={{borderRadius:90,backgroundColor:"#fff"}}>
+      <View style={{borderRadius:30,backgroundColor:"#fff",marginTop:350}}>
         <Text style={styles.title}>{params.name}</Text>
       {/* <Text>ID: {params.id}</Text> */}
       <Text style={styles.description}>{description}</Text>
@@ -29,7 +29,7 @@ export default function ProductDetails() {
 const styles = StyleSheet.create({
   container:{},
   title: { fontSize: 22,padding:10, fontWeight: "bold", },
-  image: { width: "100%" , height: 400 ,borderRadius: 0, marginBottom:20 },
+  image: { width: "100%" , height: 400 ,borderRadius: 0, marginBottom:20 ,position: "absolute",zIndex: 0,},
   description: { fontSize: 16, padding:10, lineHeight: 30,color:"#929191ff"},
  // styles Button
  Text:{fontWeight:"bold",color:"#fff",textAlign:"center"},

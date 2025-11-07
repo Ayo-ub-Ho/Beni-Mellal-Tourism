@@ -35,7 +35,7 @@ id: string;
   };
 
   if (loading) {
-    return <ActivityIndicator size="large" color="#0000ff" />;
+    return <ActivityIndicator size="large" color="#0000ff" style={{alignItems:"center",justifyContent:"center",flex:1}}/>;
   }
 
   return (
@@ -97,3 +97,4 @@ const styles = StyleSheet.create({
   Card: { backgroundColor: "#fff", padding: 10, marginVertical: 10, borderRadius: 15 },
   Text2: { fontWeight: "bold", fontSize: 17, marginTop: 10 },
 });
+
