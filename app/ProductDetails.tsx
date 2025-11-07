@@ -1,7 +1,7 @@
-import { useLocalSearchParams } from "expo-router";
+import Ionicons from '@expo/vector-icons/Ionicons';
+import { router, useLocalSearchParams } from "expo-router";
 import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
-
 export default function ProductDetails() {
   const params = useLocalSearchParams(); 
 
@@ -13,7 +13,8 @@ export default function ProductDetails() {
     <SafeAreaView>
       <View style={styles.container}>
       {thumbnailUri && <Image source={{ uri: thumbnailUri }} style={styles.image} />}
-      <View style={{borderRadius:30,backgroundColor:"#fff",marginTop:350}}>
+      <Ionicons name="caret-back-circle-sharp" size={40} color="black" style={{padding:9}} onPress={()=>router.push("/ListOfAttractions")}/>
+      <View style={{borderRadius:30,backgroundColor:"#fff",marginTop:300}}>
         <Text style={styles.title}>{params.name}</Text>
       {/* <Text>ID: {params.id}</Text> */}
       <Text style={styles.description}>{description}</Text>
