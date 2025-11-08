@@ -64,9 +64,14 @@ id: string;
   renderItem={({ item }) => (
     <TouchableOpacity
       onPress={() =>
-        router.push(
-          `/ProductDetails?id=${item.id}&name=${encodeURIComponent(item.name)}&thumbnail=${encodeURIComponent(item.thumbnail)}&description=${encodeURIComponent(item.description)}`
-        )
+       router.push({
+  pathname: "/ProductDetails",
+  params: {
+    name: item.name,
+    thumbnail: item.thumbnail,
+    description: encodeURIComponent(item.description),
+  },
+})
       }
       activeOpacity={0.7}
     >
@@ -77,10 +82,6 @@ id: string;
     </TouchableOpacity>
   )}
 />
-
-
-
-
       </View>
     </SafeAreaView>
   );
@@ -97,4 +98,3 @@ const styles = StyleSheet.create({
   Card: { backgroundColor: "#fff", padding: 10, marginVertical: 10, borderRadius: 15 },
   Text2: { fontWeight: "bold", fontSize: 17, marginTop: 10 },
 });
-
