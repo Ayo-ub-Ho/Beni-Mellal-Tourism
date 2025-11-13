@@ -16,7 +16,7 @@ import {
   View,
 } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
-import useFavoritesStore from "../../store/useFavoritesStore";
+import useFavoritesStore from "../../store/useFavoritesStore"; // ✅ التصحيح هنا
 
 interface Prodacte {
   id: string;

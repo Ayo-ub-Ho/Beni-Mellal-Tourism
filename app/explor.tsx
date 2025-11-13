@@ -1,4 +1,5 @@
 import { LinearGradient } from "expo-linear-gradient";
+import { router } from "expo-router";
 import React from "react";
 import {
   Dimensions,
@@ -62,7 +63,6 @@ const OnboardingScreen = (): React.JSX.Element => {
         { backgroundColor: isDarkMode ? "#1a1a1a" : "#fff" },
       ]}
     >
-      {/* Top gradient */}
       <LinearGradient
         style={{
           position: "absolute",
@@ -160,7 +160,9 @@ const OnboardingScreen = (): React.JSX.Element => {
             backgroundColor: "#FFD700",
             paddingVertical: __GAP,
             borderRadius: 99,
+            bottom: 20,
           }}
+          onPress={() => router.push("/(tabs)/ListOfAttractions")}
         >
           <Text
             style={{
@@ -174,7 +176,6 @@ const OnboardingScreen = (): React.JSX.Element => {
           </Text>
         </AnimatedPressable>
       </View>
-      {/* <Button title="Test" /> */}
     </View>
   );
 };
@@ -197,7 +198,6 @@ const styles = StyleSheet.create({
     overflow: "hidden",
     gap: __GAP / 2,
     backgroundColor: "#fff",
-    // transform: [{ rotate: '15deg' }],
   },
   text: {
     fontFamily: FONTS.EuclidCircularB.Regular,

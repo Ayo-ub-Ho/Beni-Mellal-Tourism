@@ -3,7 +3,6 @@ import { useEffect, useRef } from "react";
 import {
   Animated,
   ImageBackground,
-  StatusBar,
   StyleSheet,
   Text,
   TouchableOpacity,
@@ -47,7 +46,6 @@ export default function Index() {
 
   return (
     <SafeAreaView style={styles.container} edges={["left", "right"]}>
-      <StatusBar style="light" />
       <AnimatedImageBackground
         source={require("../assets/images/bg-bnimellal.jpg")}
         resizeMode="cover"

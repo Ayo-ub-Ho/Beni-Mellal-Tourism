@@ -19,8 +19,12 @@ interface Prodacte {
 }
 
 export default function Favorites() {
-  const favorites = useFavoritesStore((state) => state.favorites);
-  const removeFavorite = useFavoritesStore((state) => state.removeFavorite);
+  const favorites = useFavoritesStore(
+    (state: { favorites: any }) => state.favorites
+  );
+  const removeFavorite = useFavoritesStore(
+    (state: { removeFavorite: any }) => state.removeFavorite
+  );
 
   const [products, setProducts] = useState<Prodacte[]>([]);
   const [loading, setLoading] = useState(true);
