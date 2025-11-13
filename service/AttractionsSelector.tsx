@@ -1,4 +1,4 @@
-import axios from 'axios';
+import axios from "axios";
 
 const api = axios.create({
   baseURL: "https://69086a582d902d0651b03223.mockapi.io/api/v1",
@@ -7,7 +7,7 @@ const api = axios.create({
 
 export const getProdacte = async () => {
   try {
-    const response = await api.get('/places');
+    const response = await api.get("/places");
     return response.data;
   } catch (error) {
     console.error("Error fetching products:", error);
@@ -22,7 +22,7 @@ export const addProdacte = async (data: {
   images?: string[];
 }) => {
   try {
-    const response = await api.post('/places', data);
+    const response = await api.post("/places", data);
     return response.data;
   } catch (error) {
     console.error("Error adding product:", error);

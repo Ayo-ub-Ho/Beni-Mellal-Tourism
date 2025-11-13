@@ -3,10 +3,10 @@ import { PlatformPressable } from "@react-navigation/elements";
 import React, { useEffect } from "react";
 import { StyleSheet } from "react-native";
 import Animated, {
-    interpolate,
-    useAnimatedStyle,
-    useSharedValue,
-    withSpring,
+  interpolate,
+  useAnimatedStyle,
+  useSharedValue,
+  withSpring,
 } from "react-native-reanimated";
 
 type Props = {
@@ -24,7 +24,6 @@ export default function TabBarButton({
   routeName,
   label,
 }: Props) {
-
   const scale = useSharedValue(0);
 
   useEffect(() => {
@@ -37,7 +36,7 @@ export default function TabBarButton({
 
     return {
       transform: [{ scale: scaleValue }],
-      top : top
+      top: top,
     };
   });
 
@@ -58,7 +57,9 @@ export default function TabBarButton({
         {icons[routeName] && icons[routeName]({ color: iconColor, size: 24 })}
       </Animated.View>
 
-      <Animated.Text style={[styles.label, animatedTextStyle, { color: iconColor }]}>
+      <Animated.Text
+        style={[styles.label, animatedTextStyle, { color: iconColor }]}
+      >
         {label}
       </Animated.Text>
     </PlatformPressable>
