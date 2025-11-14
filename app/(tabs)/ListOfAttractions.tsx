@@ -1,6 +1,6 @@
 import { getProdacte } from "@/service/AttractionsSelector";
+import AntDesign from "@expo/vector-icons/AntDesign";
 import Feather from "@expo/vector-icons/Feather";
-import FontAwesome6 from "@expo/vector-icons/FontAwesome6";
 import Ionicons from "@expo/vector-icons/Ionicons";
 import { useBottomTabBarHeight } from "@react-navigation/bottom-tabs";
 import { router } from "expo-router";
@@ -16,7 +16,7 @@ import {
   View,
 } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
-import useFavoritesStore from "../../store/useFavoritesStore"; // ✅ التصحيح هنا
+import useFavoritesStore from "../../store/useFavoritesStore";
 
 interface Prodacte {
   id: string;
@@ -31,7 +31,7 @@ export default function ListOfAttractions() {
   const [loading, setLoading] = useState(true);
   const tabHeight = useBottomTabBarHeight();
 
-  const { favorites, addFavorite, removeFavorite, isFavorite, loadFavorites } =
+  const { addFavorite, removeFavorite, isFavorite, loadFavorites } =
     useFavoritesStore();
 
   useEffect(() => {
@@ -72,7 +72,12 @@ export default function ListOfAttractions() {
     <SafeAreaView style={{ flex: 1, backgroundColor: "#f1ece1ff" }}>
       <View style={styles.content}>
         <View style={styles.containerIcone}>
-          <FontAwesome6 name="bars" size={24} color="black" />
+          <AntDesign
+            onPress={() => router.back()}
+            name="arrow-left"
+            size={24}
+            color="black"
+          />
           <Text style={styles.TextIcone}>Discover Beni Mellal</Text>
           <Ionicons name="notifications-outline" size={24} color="black" />
         </View>
@@ -85,7 +90,7 @@ export default function ListOfAttractions() {
           />
         </View>
 
-        <View style={styles.containerButton}>
+        {/* <View style={styles.containerButton}>
           <TouchableOpacity style={styles.button}>
             <Text style={styles.Text1}>All</Text>
           </TouchableOpacity>
@@ -98,7 +103,7 @@ export default function ListOfAttractions() {
           <TouchableOpacity style={styles.button}>
             <Text style={styles.Text1}>Culture</Text>
           </TouchableOpacity>
-        </View>
+        </View> */}
 
         <FlatList
           data={products}
